@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rakesh Akunuri | Cybersecurity Engineer</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">RA_SEC</a>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pages/about.html">About</a></li>
+      <li><a href="pages/skills.html">Skills</a></li>
+      <li><a href="pages/projects.html">Projects</a></li>
+      <li><a href="pages/certifications.html">Certs</a></li>
+      <li><a href="pages/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span>SYSTEMS ONLINE</span>
+    </div>
+  </nav>
+
+  <!-- MATRIX CANVAS BACKGROUND -->
+  <canvas id="matrix-canvas" class="matrix-bg"></canvas>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal">
+        <span class="mono">&gt;_ INITIALIZING PROFILE...</span>
+      </div>
+      <h1 class="hero-name reveal">
+        RAKESH<br>
+        <span class="neon-cyan">AKUNURI</span>
+      </h1>
+      <div class="hero-role reveal">
+        <span class="mono">&gt;_ </span>
+        <span id="typewriter" class="neon-green"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-bio reveal">
+        M.Tech candidate at JNTUH specializing in cybersecurity — VAPT, web security,
+        and network defense. Building secure systems from Hyderabad, India.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="pages/projects.html" class="btn btn-primary">View Projects</a>
+        <a href="pages/contact.html" class="btn btn-outline">Initiate Contact</a>
+      </div>
+
+      <!-- STAT STRIP -->
+      <div class="stat-strip reveal">
+        <div class="stat">
+          <span class="stat-n" data-count="3">0</span>
+          <span class="stat-l">Projects</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-n" data-count="4">0</span>
+          <span class="stat-l">Certifications</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-n" data-count="5">0</span>
+          <span class="stat-l">Tech Stacks</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-n">2027</span>
+          <span class="stat-l">M.Tech Grad</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D GLOBE -->
+    <div class="hero-visual reveal">
+      <canvas id="globe-canvas" class="globe-canvas"></canvas>
+      <div class="globe-label">THREAT INTELLIGENCE<br><span class="neon-cyan">NETWORK ACTIVE</span></div>
+      <div class="globe-ring globe-ring-1"></div>
+      <div class="globe-ring globe-ring-2"></div>
+    </div>
+  </section>
+
+  <!-- TERMINAL SECTION -->
+  <section class="terminal-section section">
+    <div class="container">
+      <div class="term-wrap reveal">
+        <div class="term-header">
+          <span class="term-dot red"></span>
+          <span class="term-dot yellow"></span>
+          <span class="term-dot green"></span>
+          <span class="term-title mono">bash — rakesh@sec:~</span>
+        </div>
+        <div class="term-body" id="terminal-output"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK LINKS SECTION -->
+  <section class="quick-section section">
+    <div class="container">
+      <div class="section-label">Navigate</div>
+      <h2 class="reveal">Explore the Portfolio</h2>
+      <div class="quick-grid">
+        <a href="pages/about.html" class="quick-card reveal panel">
+          <div class="qc-icon">⬡</div>
+          <h3>About Me</h3>
+          <p>Background, education, and personal profile</p>
+          <span class="qc-arrow">→</span>
+        </a>
+        <a href="pages/skills.html" class="quick-card reveal panel">
+          <div class="qc-icon">◈</div>
+          <h3>Technical Skills</h3>
+          <p>Cybersecurity, languages, frameworks, tools</p>
+          <span class="qc-arrow">→</span>
+        </a>
+        <a href="pages/projects.html" class="quick-card reveal panel">
+          <div class="qc-icon">◉</div>
+          <h3>Projects</h3>
+          <p>Web apps, mobile systems, IoT & security</p>
+          <span class="qc-arrow">→</span>
+        </a>
+        <a href="pages/certifications.html" class="quick-card reveal panel">
+          <div class="qc-icon">◆</div>
+          <h3>Certifications</h3>
+          <p>Achievements, hackathons, and training</p>
+          <span class="qc-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/skills.html">Skills</a>
+        <a href="pages/projects.html">Projects</a>
+        <a href="pages/contact.html">Contact</a>
+      </div>
+      <p>© 2024 Rakesh Akunuri · Hyderabad, India · Built with passion for security</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    initMatrixCanvas('matrix-canvas');
+    initHexOrbCanvas('globe-canvas');
+
+    const tw = document.getElementById('typewriter');
+    if (tw) typewriter(tw, [
+      'Cybersecurity Engineer',
+      'VAPT Specialist',
+      'Web App Pentester',
+      'Network Security Analyst',
+      'Full-Stack Developer',
+      'M.Tech @ JNTUH'
+    ]);
+
+    initTerminal('terminal-output', [
+      '$ whoami',
+      'rakesh_akunuri — M.Tech (Cybersecurity) | JNTUH',
+      '$ cat skills.txt',
+      'VAPT | Network Security | Web App Security | OWASP | Python | Node.js',
+      '$ ls certifications/',
+      'BDL_Training.cert  TLC_IoT.cert  NITSC_AI.cert  Hackathon_Winner.cert',
+      '$ ping -c1 hyderabad.in',
+      'PING hyderabad.in: 64 bytes — time=0.9ms  TTL=64',
+      '$ echo "Open to opportunities"',
+      'Open to opportunities ✓',
+      '$ _'
+    ], 35);
+  </script>
+</body>
+</html>

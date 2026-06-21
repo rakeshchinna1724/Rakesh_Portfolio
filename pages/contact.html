@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Rakesh Akunuri</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+
+  <canvas id="particles-canvas" class="particles-bg"></canvas>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">RA_SEC</a>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="certifications.html">Certs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span>SYSTEMS ONLINE</span>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label reveal">Open Channel</div>
+      <h1 class="reveal">Get in <span class="neon-cyan">Touch</span></h1>
+      <p class="page-sub reveal">Open to internships, collaborations, and cybersecurity opportunities.</p>
+    </div>
+  </section>
+
+  <section class="section" style="position:relative;z-index:1;">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: INFO -->
+        <div class="contact-info">
+
+          <div class="ci-card panel reveal">
+            <div class="ci-icon">📧</div>
+            <div class="ci-body">
+              <div class="ci-label">Email</div>
+              <a href="mailto:Rakeschinna2002@gmail.com" class="ci-val">Rakeschinna2002@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="ci-card panel reveal">
+            <div class="ci-icon">📞</div>
+            <div class="ci-body">
+              <div class="ci-label">Phone</div>
+              <a href="tel:+916281229675" class="ci-val">+91 6281229675</a>
+            </div>
+          </div>
+
+          <div class="ci-card panel reveal">
+            <div class="ci-icon">📍</div>
+            <div class="ci-body">
+              <div class="ci-label">Location</div>
+              <span class="ci-val">Hyderabad, Telangana, India</span>
+            </div>
+          </div>
+
+          <div class="ci-card panel reveal">
+            <div class="ci-icon">🎓</div>
+            <div class="ci-body">
+              <div class="ci-label">Institution</div>
+              <span class="ci-val">JNTUH UCEJ — M.Tech Pursuing</span>
+            </div>
+          </div>
+
+          <div class="availability reveal">
+            <div class="av-dot"></div>
+            <span>Available for internships & collaborations</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: FORM -->
+        <div class="contact-form-wrap reveal">
+          <div class="form-header">
+            <div class="term-header" style="border-radius:4px 4px 0 0;">
+              <span class="term-dot red"></span>
+              <span class="term-dot yellow"></span>
+              <span class="term-dot green"></span>
+              <span class="term-title mono">send_message.sh</span>
+            </div>
+          </div>
+
+          <div class="contact-form panel" style="border-radius:0 0 4px 4px; border-top:none;">
+            <div class="field-group">
+              <label class="field-label mono">// Your Name</label>
+              <input type="text" class="field-input" placeholder="Enter your name" id="name">
+            </div>
+            <div class="field-group">
+              <label class="field-label mono">// Email Address</label>
+              <input type="email" class="field-input" placeholder="your@email.com" id="email">
+            </div>
+            <div class="field-group">
+              <label class="field-label mono">// Subject</label>
+              <input type="text" class="field-input" placeholder="Opportunity / Collaboration / General" id="subject">
+            </div>
+            <div class="field-group">
+              <label class="field-label mono">// Message</label>
+              <textarea class="field-input field-textarea" placeholder="Type your message..." id="message" rows="5"></textarea>
+            </div>
+            <button class="btn btn-primary send-btn" onclick="handleSend()">
+              <span>⟶</span> SEND MESSAGE
+            </button>
+            <div id="form-msg" class="form-feedback"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p>© 2024 Rakesh Akunuri · Hyderabad, India</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    initParticles('particles-canvas');
+
+    function handleSend() {
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const fb      = document.getElementById('form-msg');
+
+      if (!name || !email || !message) {
+        fb.textContent = '> ERROR: Name, email, and message are required.';
+        fb.style.color = 'var(--neon-red)';
+        return;
+      }
+
+      // Build mailto link
+      const mailto = `mailto:Rakeschinna2002@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Contact')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+      window.location.href = mailto;
+      fb.textContent = '> SUCCESS: Opening your email client...';
+      fb.style.color = 'var(--neon-green)';
+    }
+  </script>
+</body>
+</html>

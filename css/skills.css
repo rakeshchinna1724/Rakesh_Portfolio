@@ -1,0 +1,91 @@
+/* ============================================
+   SKILLS PAGE
+   ============================================ */
+
+.skills-header { margin-bottom: 2rem; }
+.skills-header h2 { margin-top: 0.3rem; }
+
+/* Security Grid */
+.sec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.sec-card {
+  padding: 1.8rem;
+  transition: all 0.3s;
+}
+.sec-card:hover {
+  border-color: var(--neon-cyan);
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(0,245,255,0.12);
+}
+.sec-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+.sec-card h3 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-primary); }
+.sec-card p { font-size: 0.88rem; color: var(--text-dim); margin-bottom: 1rem; }
+.skill-pct {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--neon-green);
+  display: block;
+  margin-top: 0.4rem;
+}
+
+/* Language bars */
+.lang-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.lang-item {
+  padding: 1.2rem 1.5rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+.lang-item:hover { border-color: var(--neon-cyan); }
+.lang-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.7rem;
+}
+.lang-name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+.lang-pct {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  color: var(--neon-cyan);
+}
+
+/* Tools grid */
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.tool-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-family: var(--font-code);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  cursor: default;
+  transition: all 0.3s;
+}
+.tool-pill:hover {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  background: rgba(0,245,255,0.06);
+}
+.tool-ico { color: var(--neon-cyan); font-size: 0.9rem; }
